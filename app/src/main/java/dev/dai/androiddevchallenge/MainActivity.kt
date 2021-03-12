@@ -22,7 +22,14 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import dev.dai.androiddevchallenge.navigation.Screen
+import dev.dai.androiddevchallenge.screen.Screen1
+import dev.dai.androiddevchallenge.screen.Screen2
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +47,15 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        val navController = rememberNavController()
+        NavHost(navController, startDestination = Screen.Screen1.route) {
+            composable(Screen.Screen1.route) {
+                Screen1(navController)
+            }
+            composable(Screen.Screen2.route) {
+                Screen2(navController)
+            }
+        }
     }
 }
 
