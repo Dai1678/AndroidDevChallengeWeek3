@@ -40,7 +40,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
+import dev.dai.androiddevchallenge.navigation.Screen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 import dev.dai.androiddevchallenge.ui.theme.pink900
@@ -100,7 +102,7 @@ fun LoginScreen(navHostController: NavHostController) {
                     textAlign = TextAlign.Center
                 )
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = { navHostController.navigate(Screen.HomeScreen.route) },
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = pink900
                     ),

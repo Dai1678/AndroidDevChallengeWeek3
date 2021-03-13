@@ -25,6 +25,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.dai.androiddevchallenge.navigation.Screen
+import dev.dai.androiddevchallenge.screen.HomeScreen
 import dev.dai.androiddevchallenge.screen.LoginScreen
 import dev.dai.androiddevchallenge.screen.WelcomeScreen
 
@@ -48,6 +49,9 @@ fun MyApp() {
             }
             composable(Screen.LoginScreen.route) {
                 LoginScreen(navController)
+            }
+            composable(Screen.HomeScreen.route) {
+                HomeScreen()
             }
         }
     }
