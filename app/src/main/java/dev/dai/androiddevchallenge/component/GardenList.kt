@@ -17,8 +17,10 @@ package dev.dai.androiddevchallenge.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,6 +31,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -42,8 +45,8 @@ import dev.dai.androiddevchallenge.ui.theme.gray
 
 @Composable
 fun GardenList() {
-    LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        items(gardenList) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        gardenList.forEach {
             GardenItem(it)
         }
     }
@@ -63,7 +66,8 @@ fun GardenItem(garden: Garden) {
                     bottom.linkTo(parent.bottom)
                     start.linkTo(parent.start)
                 }
-                .width(64.dp),
+                .width(64.dp)
+                .clip(MaterialTheme.shapes.small),
             contentScale = ContentScale.Crop
         )
         Text(
