@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -56,8 +57,18 @@ fun HomeContainerScreen() {
                     )
                     navigationItems.forEach { screen ->
                         BottomNavigationItem(
-                            icon = { Icon(imageVector = screen.iconVector, contentDescription = screen.route) },
-                            label = { Text(stringResource(screen.resId)) },
+                            icon = {
+                                Icon(
+                                    imageVector = screen.iconVector,
+                                    contentDescription = screen.route
+                                )
+                            },
+                            label = {
+                                Text(
+                                    text = stringResource(screen.resId),
+                                    style = MaterialTheme.typography.caption
+                                )
+                            },
                             selected = currentRoute == screen.route,
                             onClick = {
                                 navController.navigate(screen.route) {
