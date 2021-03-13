@@ -25,17 +25,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.dai.androiddevchallenge.navigation.Screen
-import dev.dai.androiddevchallenge.screen.Screen1
 import dev.dai.androiddevchallenge.screen.Screen2
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.androiddevchallenge.screen.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyTheme {
-                MyApp()
-            }
+            MyApp()
         }
     }
 }
@@ -47,7 +44,7 @@ fun MyApp() {
         val navController = rememberNavController()
         NavHost(navController, startDestination = Screen.Screen1.route) {
             composable(Screen.Screen1.route) {
-                Screen1(navController)
+                WelcomeScreen(navController)
             }
             composable(Screen.Screen2.route) {
                 Screen2(navController)
