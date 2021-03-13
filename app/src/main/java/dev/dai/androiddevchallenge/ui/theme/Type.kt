@@ -32,7 +32,7 @@ val typography = Typography(
     h2 = TextStyle(
         fontFamily = FontFamily(Font(R.font.nunito_sans_bold)),
         fontSize = 14.sp,
-        letterSpacing = 15.sp
+        letterSpacing = 0.15.sp
     ),
     subtitle1 = TextStyle(
         fontFamily = FontFamily(Font(R.font.nunito_sans_light)),

@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import dev.dai.androiddevchallenge.component.GardenThemeList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 
@@ -64,9 +65,11 @@ fun HomeScreen() {
             style = MaterialTheme.typography.h1,
             modifier = Modifier.paddingFromBaseline(top = 32.dp, bottom = 16.dp)
         )
-        Spacer(Modifier.height(136.dp)) // TODO LazyRow + Card
+        GardenThemeList()
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .paddingFromBaseline(40.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
