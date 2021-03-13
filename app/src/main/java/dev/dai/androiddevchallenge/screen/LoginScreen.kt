@@ -71,7 +71,8 @@ fun LoginScreen(navHostController: NavHostController) {
                         Text(
                             text = "Email address",
                             color = gray,
-                            style = MaterialTheme.typography.body1)
+                            style = MaterialTheme.typography.body1
+                        )
                     }
                 )
                 OutlinedTextField(
@@ -84,11 +85,12 @@ fun LoginScreen(navHostController: NavHostController) {
                         Text(
                             text = "Password (8+ characters)",
                             color = gray,
-                            style = MaterialTheme.typography.body1)
+                            style = MaterialTheme.typography.body1
+                        )
                     }
                 )
                 Text(
-                    text = " By clicking below, you agree to our Terms of Use and consent to our Privacy Policy." ,
+                    text = " By clicking below, you agree to our Terms of Use and consent to our Privacy Policy.",
                     color = gray,
                     style = MaterialTheme.typography.body2,
                     modifier = Modifier
