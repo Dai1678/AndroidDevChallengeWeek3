@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -28,22 +29,32 @@ import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.ParagraphStyle
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
+import dev.dai.androiddevchallenge.component.ClickableLinkText
 import dev.dai.androiddevchallenge.navigation.MainScreen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
-import dev.dai.androiddevchallenge.ui.theme.gray
-import dev.dai.androiddevchallenge.ui.theme.pink900
-import dev.dai.androiddevchallenge.ui.theme.white
 
 @Composable
 fun LoginScreen(navHostController: NavHostController) {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
     MyTheme {
         Surface(
             color = MaterialTheme.colors.background,
@@ -55,52 +66,50 @@ fun LoginScreen(navHostController: NavHostController) {
             ) {
                 Text(
                     text = "Log in with email",
-                    color = gray,
                     style = MaterialTheme.typography.h1,
                     modifier = Modifier
                         .paddingFromBaseline(top = 184.dp, bottom = 16.dp)
                 )
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = { /*TODO*/ },
+                    value = email,
+                    onValueChange = { email = it },
                     modifier = Modifier
                         .padding(bottom = 8.dp)
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    placeholder = {
+                        .fillMaxWidth(),
+                    label = {
                         Text(
                             text = "Email address",
-                            color = gray,
                             style = MaterialTheme.typography.body1
                         )
                     }
                 )
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = { /*TODO*/ },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    placeholder = {
+                    value = password,
+                    onValueChange = { password = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    label = {
                         Text(
                             text = "Password (8+ characters)",
-                            color = gray,
                             style = MaterialTheme.typography.body1
                         )
-                    }
+                    },
+                    visualTransformation = PasswordVisualTransformation(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
                 )
-                Text(
+                ClickableLinkText(
                     text = " By clicking below, you agree to our Terms of Use and consent to our Privacy Policy.",
-                    color = gray,
-                    style = MaterialTheme.typography.body2,
-                    modifier = Modifier
-                        .paddingFromBaseline(top = 24.dp, bottom = 16.dp),
-                    textAlign = TextAlign.Center
+                    links = listOf(
+                        "Terms of Use",
+                        "Privacy Policy"
+                    ),
+                    textStyle = MaterialTheme.typography.body2,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 16.dp)
                 )
                 Button(
                     onClick = { navHostController.navigate(MainScreen.HomeContainer.route) },
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = pink900
+                        backgroundColor = MaterialTheme.colors.secondary
                     ),
                     shape = MaterialTheme.shapes.medium,
                     modifier = Modifier
@@ -109,7 +118,6 @@ fun LoginScreen(navHostController: NavHostController) {
                 ) {
                     Text(
                         text = "Log in",
-                        color = white,
                         style = MaterialTheme.typography.button
                     )
                 }
