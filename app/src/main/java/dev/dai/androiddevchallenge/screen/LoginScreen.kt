@@ -55,72 +55,70 @@ import dev.dai.androiddevchallenge.ui.theme.MyTheme
 fun LoginScreen(navHostController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    MyTheme {
-        Surface(
-            color = MaterialTheme.colors.background,
-            modifier = Modifier.fillMaxSize()
+    Surface(
+        color = MaterialTheme.colors.background,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                modifier = Modifier.padding(horizontal = 16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "Log in with email",
-                    style = MaterialTheme.typography.h1,
-                    modifier = Modifier
-                        .paddingFromBaseline(top = 184.dp, bottom = 16.dp)
-                )
-                OutlinedTextField(
-                    value = email,
-                    onValueChange = { email = it },
-                    modifier = Modifier
-                        .padding(bottom = 8.dp)
-                        .fillMaxWidth(),
-                    label = {
-                        Text(
-                            text = "Email address",
-                            style = MaterialTheme.typography.body1
-                        )
-                    }
-                )
-                OutlinedTextField(
-                    value = password,
-                    onValueChange = { password = it },
-                    modifier = Modifier.fillMaxWidth(),
-                    label = {
-                        Text(
-                            text = "Password (8+ characters)",
-                            style = MaterialTheme.typography.body1
-                        )
-                    },
-                    visualTransformation = PasswordVisualTransformation(),
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
-                )
-                ClickableLinkText(
-                    text = " By clicking below, you agree to our Terms of Use and consent to our Privacy Policy.",
-                    links = listOf(
-                        "Terms of Use",
-                        "Privacy Policy"
-                    ),
-                    textStyle = MaterialTheme.typography.body2,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 16.dp)
-                )
-                Button(
-                    onClick = { navHostController.navigate(MainScreen.HomeContainer.route) },
-                    colors = ButtonDefaults.buttonColors(
-                        backgroundColor = MaterialTheme.colors.secondary
-                    ),
-                    shape = MaterialTheme.shapes.medium,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp)
-                ) {
+            Text(
+                text = "Log in with email",
+                style = MaterialTheme.typography.h1,
+                modifier = Modifier
+                    .paddingFromBaseline(top = 184.dp, bottom = 16.dp)
+            )
+            OutlinedTextField(
+                value = email,
+                onValueChange = { email = it },
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
+                    .fillMaxWidth(),
+                label = {
                     Text(
-                        text = "Log in",
-                        style = MaterialTheme.typography.button
+                        text = "Email address",
+                        style = MaterialTheme.typography.body1
                     )
                 }
+            )
+            OutlinedTextField(
+                value = password,
+                onValueChange = { password = it },
+                modifier = Modifier.fillMaxWidth(),
+                label = {
+                    Text(
+                        text = "Password (8+ characters)",
+                        style = MaterialTheme.typography.body1
+                    )
+                },
+                visualTransformation = PasswordVisualTransformation(),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+            )
+            ClickableLinkText(
+                text = " By clicking below, you agree to our Terms of Use and consent to our Privacy Policy.",
+                links = listOf(
+                    "Terms of Use",
+                    "Privacy Policy"
+                ),
+                textStyle = MaterialTheme.typography.body2,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.paddingFromBaseline(top = 24.dp, bottom = 16.dp)
+            )
+            Button(
+                onClick = { navHostController.navigate(MainScreen.HomeContainer.route) },
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = MaterialTheme.colors.secondary
+                ),
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
+            ) {
+                Text(
+                    text = "Log in",
+                    style = MaterialTheme.typography.button
+                )
             }
         }
     }
