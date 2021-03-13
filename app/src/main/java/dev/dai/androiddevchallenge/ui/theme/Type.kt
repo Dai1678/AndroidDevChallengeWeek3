@@ -19,44 +19,53 @@ import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import dev.dai.androiddevchallenge.R
 
-// Set of Material typography styles to start with
+val nunitoSansFamily = FontFamily(
+    Font(R.font.nunito_sans_bold, FontWeight.Bold),
+    Font(R.font.nunito_sans_light, FontWeight.Light),
+    Font(R.font.nunito_sans_semibold, FontWeight.SemiBold)
+)
+
 val typography = Typography(
     h1 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_bold)),
-        fontSize = 18.sp,
-        letterSpacing = 0.sp,
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp
     ),
     h2 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_bold)),
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Bold,
         fontSize = 14.sp,
         letterSpacing = 0.15.sp
     ),
     subtitle1 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_light)),
-        fontSize = 16.sp,
-        letterSpacing = 0.sp
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Light,
+        fontSize = 16.sp
     ),
     body1 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_light)),
-        fontSize = 14.sp,
-        letterSpacing = 0.sp
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Light,
+        fontSize = 14.sp
     ),
     body2 = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_light)),
-        fontSize = 12.sp,
-        letterSpacing = 0.sp
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.Light,
+        fontSize = 12.sp
     ),
     button = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_semibold)),
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
         letterSpacing = 1.sp
     ),
     caption = TextStyle(
-        fontFamily = FontFamily(Font(R.font.nunito_sans_semibold)),
-        fontSize = 12.sp,
-        letterSpacing = 0.sp
+        fontFamily = nunitoSansFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp
     )
 )
