@@ -120,7 +120,7 @@ fun LoginScreen(navHostController: NavHostController) {
     }
 }
 
-@Preview
+@Preview("Login Screen", widthDp = 360, heightDp = 640)
 @Composable
 fun LoginScreenPreview() {
     MyTheme {
