@@ -45,9 +45,9 @@ import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .padding(horizontal = 16.dp)
             .fillMaxSize()
     ) {

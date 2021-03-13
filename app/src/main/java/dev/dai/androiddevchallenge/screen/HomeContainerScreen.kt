@@ -15,6 +15,7 @@
  */
 package dev.dai.androiddevchallenge.screen
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
@@ -22,13 +23,17 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.KEY_ROUTE
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
+import dev.chrisbanes.accompanist.insets.navigationBarsHeight
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
 import dev.dai.androiddevchallenge.navigation.HomeScreen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
@@ -38,7 +43,9 @@ fun HomeContainerScreen() {
     MyTheme {
         Scaffold(
             bottomBar = {
-                BottomNavigation {
+                BottomNavigation(
+                    Modifier.navigationBarsHeight(additional = 56.dp)
+                ) {
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
                     val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)
                     val navigationItems = listOf(
@@ -56,15 +63,17 @@ fun HomeContainerScreen() {
                                 navController.navigate(screen.route) {
                                     launchSingleTop = true
                                 }
-                            }
+                            },
+                            modifier = Modifier.navigationBarsPadding()
                         )
                     }
                 }
             }
-        ) {
+        ) { innerPadding ->
+            val modifier = Modifier.padding(innerPadding)
             NavHost(navController = navController, startDestination = HomeScreen.Home.route) {
                 composable(HomeScreen.Home.route) {
-                    HomeScreen()
+                    HomeScreen(modifier)
                 }
                 composable(HomeScreen.Favorites.route) {
                 }

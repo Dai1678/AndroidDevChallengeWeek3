@@ -16,24 +16,33 @@
 package dev.dai.androiddevchallenge
 
 import android.os.Bundle
+import android.view.Window
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
 import dev.dai.androiddevchallenge.navigation.MainScreen
 import dev.dai.androiddevchallenge.screen.HomeContainerScreen
 import dev.dai.androiddevchallenge.screen.LoginScreen
 import dev.dai.androiddevchallenge.screen.WelcomeScreen
+import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            MyApp()
+            ProvideWindowInsets {
+                MyApp()
+            }
         }
     }
 }
@@ -41,18 +50,16 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        val navController = rememberNavController()
-        NavHost(navController, startDestination = MainScreen.Welcome.route) {
-            composable(MainScreen.Welcome.route) {
-                WelcomeScreen(navController)
-            }
-            composable(MainScreen.Login.route) {
-                LoginScreen(navController)
-            }
-            composable(MainScreen.HomeContainer.route) {
-                HomeContainerScreen()
-            }
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = MainScreen.Welcome.route) {
+        composable(MainScreen.Welcome.route) {
+            WelcomeScreen(navController)
+        }
+        composable(MainScreen.Login.route) {
+            LoginScreen(navController)
+        }
+        composable(MainScreen.HomeContainer.route) {
+            HomeContainerScreen()
         }
     }
 }
