@@ -46,7 +46,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.compose.ConstraintLayout
 import dev.dai.androiddevchallenge.R
 import dev.dai.androiddevchallenge.data.Garden
 import dev.dai.androiddevchallenge.data.gardenList
@@ -54,7 +53,7 @@ import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 
 @Composable
-fun GardenList(modifier: Modifier = Modifier) {
+fun PlantList(modifier: Modifier = Modifier) {
     Column(Modifier.padding(horizontal = 16.dp)) {
         Row(
             modifier = modifier
@@ -80,14 +79,14 @@ fun GardenList(modifier: Modifier = Modifier) {
         }
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             gardenList.forEach {
-                GardenItem(it)
+                PlantItem(it)
             }
         }
     }
 }
 
 @Composable
-fun GardenItem(garden: Garden) {
+fun PlantItem(garden: Garden) {
     var checked by remember { mutableStateOf(false) }
     Row(
         modifier = Modifier.fillMaxWidth()
@@ -139,20 +138,20 @@ fun GardenItem(garden: Garden) {
 
 @Preview
 @Composable
-fun GardenListPreview() {
+fun PlantListPreview() {
     MyTheme {
         Surface {
-            GardenList()
+            PlantList()
         }
     }
 }
 
 @Preview
 @Composable
-fun GardenItemPreview() {
+fun PlantItemPreview() {
     MyTheme {
         Surface {
-            GardenItem(Garden(R.drawable.monstera, "Mostera"))
+            PlantItem(Garden(R.drawable.monstera, "Mostera"))
         }
     }
 }

@@ -16,17 +16,11 @@
 package dev.dai.androiddevchallenge.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
@@ -45,7 +39,7 @@ import dev.dai.androiddevchallenge.data.gardenThemeList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
-fun GardenThemeList(modifier: Modifier = Modifier) {
+fun PlantThemeList(modifier: Modifier = Modifier) {
     Column(Modifier.padding(horizontal = 16.dp)) {
         Text(
             text = "Browse themes",
@@ -56,14 +50,14 @@ fun GardenThemeList(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(gardenThemeList) {
-                GardenThemeItem(it)
+                PlantThemeItem(it)
             }
         }
     }
 }
 
 @Composable
-fun GardenThemeItem(gardenTheme: GardenTheme) {
+fun PlantThemeItem(gardenTheme: GardenTheme) {
     Card(
         shape = MaterialTheme.shapes.small,
         elevation = 1.dp
@@ -86,20 +80,20 @@ fun GardenThemeItem(gardenTheme: GardenTheme) {
 
 @Preview
 @Composable
-fun GardenThemeListPreview() {
+fun PlantThemeListPreview() {
     MyTheme {
         Surface {
-            GardenThemeList()
+            PlantThemeList()
         }
     }
 }
 
 @Preview
 @Composable
-fun GardenThemeItemPreview() {
+fun PlantThemeItemPreview() {
     MyTheme {
         Surface {
-            GardenThemeItem(
+            PlantThemeItem(
                 GardenTheme(
                     R.drawable.desert_chic,
                     "Desert Chic"
