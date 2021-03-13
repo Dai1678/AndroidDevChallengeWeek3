@@ -49,7 +49,7 @@ fun HomeContainerScreen() {
         ) {
             NavHost(navController = navController, startDestination = HomeScreen.Home.route) {
                 composable(HomeScreen.Home.route) {
-
+                    HomeScreen()
                 }
                 composable(HomeScreen.Favorites.route) {
 
