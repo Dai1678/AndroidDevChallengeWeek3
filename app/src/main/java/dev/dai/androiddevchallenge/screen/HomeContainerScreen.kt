@@ -44,7 +44,8 @@ fun HomeContainerScreen() {
         Scaffold(
             bottomBar = {
                 BottomNavigation(
-                    Modifier.navigationBarsHeight(additional = 56.dp)
+                    Modifier.navigationBarsHeight(additional = 56.dp),
+                    backgroundColor = MaterialTheme.colors.primary
                 ) {
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
                     val currentRoute = navBackStackEntry?.arguments?.getString(KEY_ROUTE)

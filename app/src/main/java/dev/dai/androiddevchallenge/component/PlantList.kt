@@ -50,7 +50,6 @@ import dev.dai.androiddevchallenge.R
 import dev.dai.androiddevchallenge.data.Garden
 import dev.dai.androiddevchallenge.data.gardenList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
-import dev.dai.androiddevchallenge.ui.theme.gray
 
 @Composable
 fun PlantList(modifier: Modifier = Modifier) {
@@ -112,13 +111,11 @@ fun PlantItem(garden: Garden) {
                 ) {
                     Text(
                         text = garden.name,
-                        color = gray,
                         style = MaterialTheme.typography.h2,
                         modifier = Modifier.paddingFromBaseline(top = 24.dp)
                     )
                     Text(
                         text = garden.description,
-                        color = gray,
                         style = MaterialTheme.typography.body1,
                         modifier = Modifier.paddingFromBaseline(bottom = 24.dp)
                     )
