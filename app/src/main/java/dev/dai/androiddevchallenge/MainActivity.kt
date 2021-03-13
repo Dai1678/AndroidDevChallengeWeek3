@@ -25,7 +25,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.dai.androiddevchallenge.navigation.Screen
-import dev.dai.androiddevchallenge.screen.Screen2
+import dev.dai.androiddevchallenge.screen.LoginScreen
 import dev.dai.androiddevchallenge.screen.WelcomeScreen
 
 class MainActivity : AppCompatActivity() {
@@ -47,7 +47,7 @@ fun MyApp() {
                 WelcomeScreen(navController)
             }
             composable(Screen.Screen2.route) {
-                Screen2(navController)
+                LoginScreen(navController)
             }
         }
     }
