@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
         val navController = rememberNavController()
-        NavHost(navController, startDestination = Screen.Screen1.route) {
-            composable(Screen.Screen1.route) {
+        NavHost(navController, startDestination = Screen.WelcomeScreen.route) {
+            composable(Screen.WelcomeScreen.route) {
                 WelcomeScreen(navController)
             }
-            composable(Screen.Screen2.route) {
+            composable(Screen.LoginScreen.route) {
                 LoginScreen(navController)
             }
         }

@@ -38,8 +38,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 import dev.dai.androiddevchallenge.R
+import dev.dai.androiddevchallenge.navigation.Screen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 import dev.dai.androiddevchallenge.ui.theme.pink900
@@ -79,7 +81,7 @@ fun WelcomeScreen(navHostController: NavHostController) {
                         style = MaterialTheme.typography.subtitle1
                     )
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = {},
                         colors = ButtonDefaults.buttonColors(
                             backgroundColor = pink900
                         ),
@@ -97,7 +99,7 @@ fun WelcomeScreen(navHostController: NavHostController) {
                         )
                     }
                     TextButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { navHostController.navigate(Screen.LoginScreen.route) },
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     ) {
                         Text(
