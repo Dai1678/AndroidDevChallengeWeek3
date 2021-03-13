@@ -23,16 +23,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
-import dev.dai.androiddevchallenge.navigation.Screen
+import dev.dai.androiddevchallenge.navigation.MainScreen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 import dev.dai.androiddevchallenge.ui.theme.pink900
@@ -102,7 +96,7 @@ fun LoginScreen(navHostController: NavHostController) {
                     textAlign = TextAlign.Center
                 )
                 Button(
-                    onClick = { navHostController.navigate(Screen.HomeScreen.route) },
+                    onClick = { navHostController.navigate(MainScreen.HomeContainer.route) },
                     colors = ButtonDefaults.buttonColors(
                         backgroundColor = pink900
                     ),

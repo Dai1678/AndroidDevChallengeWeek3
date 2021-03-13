@@ -15,8 +15,8 @@
  */
 package dev.dai.androiddevchallenge.navigation
 
-sealed class Screen(val route: String) {
-    object WelcomeScreen : Screen("WelcomeScreen")
-    object LoginScreen : Screen("LoginScreen")
-    object HomeScreen : Screen("HomeScreen")
+sealed class MainScreen(val route: String) {
+    object Welcome : MainScreen("Welcome")
+    object Login : MainScreen("Login")
+    object HomeContainer : MainScreen("Home")
 }

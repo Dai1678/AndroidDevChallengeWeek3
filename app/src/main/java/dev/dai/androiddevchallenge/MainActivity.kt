@@ -24,8 +24,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import dev.dai.androiddevchallenge.navigation.Screen
-import dev.dai.androiddevchallenge.screen.HomeScreen
+import dev.dai.androiddevchallenge.navigation.MainScreen
+import dev.dai.androiddevchallenge.screen.HomeContainerScreen
 import dev.dai.androiddevchallenge.screen.LoginScreen
 import dev.dai.androiddevchallenge.screen.WelcomeScreen
 
@@ -43,15 +43,15 @@ class MainActivity : AppCompatActivity() {
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
         val navController = rememberNavController()
-        NavHost(navController, startDestination = Screen.WelcomeScreen.route) {
-            composable(Screen.WelcomeScreen.route) {
+        NavHost(navController, startDestination = MainScreen.Welcome.route) {
+            composable(MainScreen.Welcome.route) {
                 WelcomeScreen(navController)
             }
-            composable(Screen.LoginScreen.route) {
+            composable(MainScreen.Login.route) {
                 LoginScreen(navController)
             }
-            composable(Screen.HomeScreen.route) {
-                HomeScreen()
+            composable(MainScreen.HomeContainer.route) {
+                HomeContainerScreen()
             }
         }
     }

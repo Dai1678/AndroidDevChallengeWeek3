@@ -41,7 +41,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 import dev.dai.androiddevchallenge.R
-import dev.dai.androiddevchallenge.navigation.Screen
+import dev.dai.androiddevchallenge.navigation.MainScreen
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 import dev.dai.androiddevchallenge.ui.theme.gray
 import dev.dai.androiddevchallenge.ui.theme.pink900
@@ -99,7 +99,7 @@ fun WelcomeScreen(navHostController: NavHostController) {
                         )
                     }
                     TextButton(
-                        onClick = { navHostController.navigate(Screen.LoginScreen.route) },
+                        onClick = { navHostController.navigate(MainScreen.Login.route) },
                         modifier = Modifier.align(Alignment.CenterHorizontally)
                     ) {
                         Text(
