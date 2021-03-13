@@ -69,11 +69,10 @@ fun HomeContainerScreen() {
                     }
                 }
             }
-        ) { innerPadding ->
-            val modifier = Modifier.padding(innerPadding)
+        ) {
             NavHost(navController = navController, startDestination = HomeScreen.Home.route) {
                 composable(HomeScreen.Home.route) {
-                    HomeScreen(modifier)
+                    HomeScreen()
                 }
                 composable(HomeScreen.Favorites.route) {
                 }

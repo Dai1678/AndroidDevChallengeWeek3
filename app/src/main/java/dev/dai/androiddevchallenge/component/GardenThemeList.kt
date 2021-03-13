@@ -16,11 +16,17 @@
 package dev.dai.androiddevchallenge.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
@@ -37,15 +43,21 @@ import dev.dai.androiddevchallenge.R
 import dev.dai.androiddevchallenge.data.GardenTheme
 import dev.dai.androiddevchallenge.data.gardenThemeList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
-import dev.dai.androiddevchallenge.ui.theme.gray
 
 @Composable
-fun GardenThemeList() {
-    LazyRow(
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        items(gardenThemeList) {
-            GardenThemeItem(it)
+fun GardenThemeList(modifier: Modifier = Modifier) {
+    Column(Modifier.padding(horizontal = 16.dp)) {
+        Text(
+            text = "Browse themes",
+            style = MaterialTheme.typography.h1,
+            modifier = modifier.paddingFromBaseline(bottom = 16.dp)
+        )
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(gardenThemeList) {
+                GardenThemeItem(it)
+            }
         }
     }
 }
@@ -65,7 +77,6 @@ fun GardenThemeItem(gardenTheme: GardenTheme) {
             )
             Text(
                 text = gardenTheme.name,
-                color = gray,
                 style = MaterialTheme.typography.h2,
                 modifier = Modifier.padding(16.dp)
             )
@@ -75,10 +86,25 @@ fun GardenThemeItem(gardenTheme: GardenTheme) {
 
 @Preview
 @Composable
+fun GardenThemeListPreview() {
+    MyTheme {
+        Surface {
+            GardenThemeList()
+        }
+    }
+}
+
+@Preview
+@Composable
 fun GardenThemeItemPreview() {
     MyTheme {
         Surface {
-            GardenThemeItem(gardenTheme = GardenTheme(R.drawable.desert_chic, "Desert Chic"))
+            GardenThemeItem(
+                GardenTheme(
+                    R.drawable.desert_chic,
+                    "Desert Chic"
+                )
+            )
         }
     }
 }
