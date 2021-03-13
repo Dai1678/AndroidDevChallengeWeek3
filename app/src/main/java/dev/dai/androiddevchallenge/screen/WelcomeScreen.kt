@@ -18,11 +18,14 @@ package dev.dai.androiddevchallenge.screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.MaterialTheme
@@ -50,31 +53,50 @@ import dev.dai.androiddevchallenge.ui.theme.white
 @Composable
 fun WelcomeScreen(navHostController: NavHostController) {
     MyTheme {
+        val isLightTheme = MaterialTheme.colors.isLight
         Surface(
             color = MaterialTheme.colors.primary,
             modifier = Modifier.fillMaxSize()
         ) {
             Box {
                 Image(
-                    painter = painterResource(id = R.drawable.ic_light_welcome_bg),
+                    painter = painterResource(
+                        id = if (isLightTheme) {
+                            R.drawable.ic_light_welcome_bg
+                        } else {
+                            R.drawable.ic_dark_welcome_bg
+                        }
+                    ),
                     contentDescription = null,
-                    modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.FillBounds
+                    modifier = Modifier.fillMaxSize()
                 )
                 Column {
                     Image(
-                        painter = painterResource(id = R.drawable.ic_light_welcome_illos),
+                        painter = painterResource(
+                            id = if (isLightTheme) {
+                                R.drawable.ic_light_welcome_illos
+                            } else {
+                                R.drawable.ic_dark_welcome_illos
+                            }
+                        ),
                         contentDescription = null,
-                        modifier = Modifier.padding(top = 72.dp, start = 88.dp, bottom = 48.dp)
+                        modifier = Modifier
+                            .padding(top = 72.dp, start = 88.dp, bottom = 48.dp)
+                            .offset(x = 32.dp)
                     )
-                    Text(
-                        text = "Bloom",
-                        Modifier.align(Alignment.CenterHorizontally),
-                        fontSize = 48.sp
+                    Image(
+                        painter = painterResource(
+                            id = if (isLightTheme) {
+                                R.drawable.ic_light_logo
+                            } else {
+                                R.drawable.ic_dark_logo
+                            }
+                        ),
+                        contentDescription = null,
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
                     )
                     Text(
                         text = "Beautiful home garden solutions",
-                        color = gray,
                         modifier = Modifier
                             .align(Alignment.CenterHorizontally)
                             .paddingFromBaseline(top = 32.dp, bottom = 40.dp),
@@ -83,7 +105,7 @@ fun WelcomeScreen(navHostController: NavHostController) {
                     Button(
                         onClick = {},
                         colors = ButtonDefaults.buttonColors(
-                            backgroundColor = pink900
+                            backgroundColor = MaterialTheme.colors.secondary
                         ),
                         shape = MaterialTheme.shapes.medium,
                         modifier = Modifier
@@ -94,7 +116,6 @@ fun WelcomeScreen(navHostController: NavHostController) {
                     ) {
                         Text(
                             text = "Create account",
-                            color = white,
                             style = MaterialTheme.typography.button
                         )
                     }
@@ -104,7 +125,7 @@ fun WelcomeScreen(navHostController: NavHostController) {
                     ) {
                         Text(
                             text = "Log in",
-                            color = pink900,
+                            color = if (isLightTheme) pink900 else white,
                             style = MaterialTheme.typography.button
                         )
                     }
