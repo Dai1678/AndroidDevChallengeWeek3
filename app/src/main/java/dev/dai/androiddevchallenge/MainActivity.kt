@@ -41,7 +41,12 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             ProvideWindowInsets {
-                MyApp()
+                MyTheme {
+                    WindowCompat.getInsetsController(
+                        window, window.decorView
+                    )?.isAppearanceLightStatusBars = MaterialTheme.colors.isLight
+                    MyApp()
+                }
             }
         }
     }

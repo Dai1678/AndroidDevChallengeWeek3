@@ -25,6 +25,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
@@ -52,83 +54,81 @@ import dev.dai.androiddevchallenge.ui.theme.white
 
 @Composable
 fun WelcomeScreen(navHostController: NavHostController) {
-    MyTheme {
-        val isLightTheme = MaterialTheme.colors.isLight
-        Surface(
-            color = MaterialTheme.colors.primary,
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Box {
+    val isLightTheme = MaterialTheme.colors.isLight
+    Surface(
+        color = MaterialTheme.colors.primary,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Box {
+            Image(
+                painter = painterResource(
+                    id = if (isLightTheme) {
+                        R.drawable.ic_light_welcome_bg
+                    } else {
+                        R.drawable.ic_dark_welcome_bg
+                    }
+                ),
+                contentDescription = null,
+                modifier = Modifier.fillMaxSize()
+            )
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Image(
                     painter = painterResource(
                         id = if (isLightTheme) {
-                            R.drawable.ic_light_welcome_bg
+                            R.drawable.ic_light_welcome_illos
                         } else {
-                            R.drawable.ic_dark_welcome_bg
+                            R.drawable.ic_dark_welcome_illos
                         }
                     ),
                     contentDescription = null,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier
+                        .padding(top = 72.dp, bottom = 48.dp)
+                        .align(Alignment.Start)
+                        .offset(x = 88.dp)
                 )
-                Column {
-                    Image(
-                        painter = painterResource(
-                            id = if (isLightTheme) {
-                                R.drawable.ic_light_welcome_illos
-                            } else {
-                                R.drawable.ic_dark_welcome_illos
-                            }
-                        ),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .padding(top = 72.dp, start = 88.dp, bottom = 48.dp)
-                            .offset(x = 32.dp)
-                    )
-                    Image(
-                        painter = painterResource(
-                            id = if (isLightTheme) {
-                                R.drawable.ic_light_logo
-                            } else {
-                                R.drawable.ic_dark_logo
-                            }
-                        ),
-                        contentDescription = null,
-                        modifier = Modifier.align(Alignment.CenterHorizontally)
-                    )
+                Image(
+                    painter = painterResource(
+                        id = if (isLightTheme) {
+                            R.drawable.ic_light_logo
+                        } else {
+                            R.drawable.ic_dark_logo
+                        }
+                    ),
+                    contentDescription = null
+                )
+                Text(
+                    text = "Beautiful home garden solutions",
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .paddingFromBaseline(top = 32.dp, bottom = 40.dp),
+                    style = MaterialTheme.typography.subtitle1
+                )
+                Button(
+                    onClick = {},
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = MaterialTheme.colors.secondary
+                    ),
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier
+                        .padding(bottom = 8.dp, start = 16.dp, end = 16.dp)
+                        .fillMaxWidth()
+                        .height(48.dp)
+                ) {
                     Text(
-                        text = "Beautiful home garden solutions",
-                        modifier = Modifier
-                            .align(Alignment.CenterHorizontally)
-                            .paddingFromBaseline(top = 32.dp, bottom = 40.dp),
-                        style = MaterialTheme.typography.subtitle1
+                        text = "Create account",
+                        style = MaterialTheme.typography.button
                     )
-                    Button(
-                        onClick = {},
-                        colors = ButtonDefaults.buttonColors(
-                            backgroundColor = MaterialTheme.colors.secondary
-                        ),
-                        shape = MaterialTheme.shapes.medium,
-                        modifier = Modifier
-                            .padding(bottom = 8.dp, start = 16.dp, end = 16.dp)
-                            .fillMaxWidth()
-                            .height(48.dp)
-                            .align(Alignment.CenterHorizontally)
-                    ) {
-                        Text(
-                            text = "Create account",
-                            style = MaterialTheme.typography.button
-                        )
-                    }
-                    TextButton(
-                        onClick = { navHostController.navigate(MainScreen.Login.route) },
-                        modifier = Modifier.align(Alignment.CenterHorizontally)
-                    ) {
-                        Text(
-                            text = "Log in",
-                            color = if (isLightTheme) pink900 else white,
-                            style = MaterialTheme.typography.button
-                        )
-                    }
+                }
+                TextButton(
+                    onClick = { navHostController.navigate(MainScreen.Login.route) }
+                ) {
+                    Text(
+                        text = "Log in",
+                        color = if (isLightTheme) pink900 else white,
+                        style = MaterialTheme.typography.button
+                    )
                 }
             }
         }
