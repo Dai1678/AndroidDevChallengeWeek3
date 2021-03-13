@@ -11,5 +11,7 @@ data class GardenTheme(
 val gardenThemeList = listOf(
     GardenTheme(R.drawable.desert_chic, "Desert chic"),
     GardenTheme(R.drawable.tiny_terrariums, "Tiny terrariums"),
-    GardenTheme(R.drawable.jungle_vibes, "Jungle vibes")
+    GardenTheme(R.drawable.jungle_vibes, "Jungle vibes"),
+    GardenTheme(R.drawable.easy_care, "Easy care"),
+    GardenTheme(R.drawable.statements, "Statements")
 )
