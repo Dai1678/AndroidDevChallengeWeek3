@@ -17,7 +17,6 @@ package dev.dai.bloom
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import dev.dai.bloom.MainActivity
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
