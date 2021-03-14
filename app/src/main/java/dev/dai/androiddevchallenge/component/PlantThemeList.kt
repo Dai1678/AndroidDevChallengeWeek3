@@ -34,8 +34,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.dai.androiddevchallenge.R
-import dev.dai.androiddevchallenge.data.GardenTheme
-import dev.dai.androiddevchallenge.data.gardenThemeList
+import dev.dai.androiddevchallenge.data.PlantTheme
+import dev.dai.androiddevchallenge.data.plantThemeList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
@@ -49,7 +49,7 @@ fun PlantThemeList(modifier: Modifier = Modifier) {
         LazyRow(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(gardenThemeList) {
+            items(plantThemeList) {
                 PlantThemeItem(it)
             }
         }
@@ -57,20 +57,20 @@ fun PlantThemeList(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun PlantThemeItem(gardenTheme: GardenTheme) {
+fun PlantThemeItem(plantTheme: PlantTheme) {
     Card(
         shape = MaterialTheme.shapes.small,
         elevation = 1.dp
     ) {
         Column {
             Image(
-                painter = painterResource(gardenTheme.imageResId),
-                contentDescription = gardenTheme.name,
+                painter = painterResource(plantTheme.imageResId),
+                contentDescription = plantTheme.name,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(width = 136.dp, height = 96.dp)
             )
             Text(
-                text = gardenTheme.name,
+                text = plantTheme.name,
                 style = MaterialTheme.typography.h2,
                 modifier = Modifier.padding(16.dp)
             )
@@ -94,7 +94,7 @@ fun PlantThemeItemPreview() {
     MyTheme {
         Surface {
             PlantThemeItem(
-                GardenTheme(
+                PlantTheme(
                     R.drawable.desert_chic,
                     "Desert Chic"
                 )

@@ -47,8 +47,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.dai.androiddevchallenge.R
-import dev.dai.androiddevchallenge.data.Garden
-import dev.dai.androiddevchallenge.data.gardenList
+import dev.dai.androiddevchallenge.data.Plant
+import dev.dai.androiddevchallenge.data.plantList
 import dev.dai.androiddevchallenge.ui.theme.MyTheme
 
 @Composable
@@ -77,7 +77,7 @@ fun PlantList(modifier: Modifier = Modifier) {
             }
         }
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            gardenList.forEach {
+            plantList.forEach {
                 PlantItem(it)
             }
         }
@@ -85,14 +85,14 @@ fun PlantList(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun PlantItem(garden: Garden) {
+fun PlantItem(plant: Plant) {
     var checked by remember { mutableStateOf(false) }
     Row(
         modifier = Modifier.fillMaxWidth()
     ) {
         Image(
-            painter = painterResource(garden.imageResId),
-            contentDescription = garden.name,
+            painter = painterResource(plant.imageResId),
+            contentDescription = plant.name,
             modifier = Modifier
                 .size(64.dp)
                 .clip(MaterialTheme.shapes.small),
@@ -110,12 +110,12 @@ fun PlantItem(garden: Garden) {
                         .padding(start = 16.dp)
                 ) {
                     Text(
-                        text = garden.name,
+                        text = plant.name,
                         style = MaterialTheme.typography.h2,
                         modifier = Modifier.paddingFromBaseline(top = 24.dp)
                     )
                     Text(
-                        text = garden.description,
+                        text = plant.description,
                         style = MaterialTheme.typography.body1,
                         modifier = Modifier.paddingFromBaseline(bottom = 24.dp)
                     )
@@ -148,7 +148,7 @@ fun PlantListPreview() {
 fun PlantItemPreview() {
     MyTheme {
         Surface {
-            PlantItem(Garden(R.drawable.monstera, "Mostera"))
+            PlantItem(Plant(R.drawable.monstera, "Mostera"))
         }
     }
 }

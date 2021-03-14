@@ -18,17 +18,15 @@ package dev.dai.androiddevchallenge.data
 import androidx.annotation.DrawableRes
 import dev.dai.androiddevchallenge.R
 
-data class Garden(
+data class PlantTheme(
     @DrawableRes val imageResId: Int,
-    val name: String,
-    val description: String = "This is a description"
+    val name: String
 )
 
-val gardenList = listOf(
-    Garden(R.drawable.monstera, "Monstera"),
-    Garden(R.drawable.aglaonema, "Aglaonema"),
-    Garden(R.drawable.peace_lily, "Peace Lily"),
-    Garden(R.drawable.fiddle_leaf, "Fiddle leaf tree"),
-    Garden(R.drawable.snake_plant, "Snake plant"),
-    Garden(R.drawable.pothos, "Pothos")
+val plantThemeList = listOf(
+    PlantTheme(R.drawable.desert_chic, "Desert chic"),
+    PlantTheme(R.drawable.tiny_terrariums, "Tiny terrariums"),
+    PlantTheme(R.drawable.jungle_vibes, "Jungle vibes"),
+    PlantTheme(R.drawable.easy_care, "Easy care"),
+    PlantTheme(R.drawable.statements, "Statements")
 )
