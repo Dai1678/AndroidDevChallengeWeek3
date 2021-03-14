@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.screen
+package dev.dai.bloom.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -43,9 +43,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
-import dev.dai.androiddevchallenge.component.ClickableLinkText
-import dev.dai.androiddevchallenge.navigation.MainScreen
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.bloom.component.ClickableLinkText
+import dev.dai.bloom.navigation.MainScreen
+import dev.dai.bloom.ui.theme.MyTheme
 
 @Composable
 fun LoginScreen(navHostController: NavHostController) {

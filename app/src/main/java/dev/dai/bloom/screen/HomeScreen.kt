@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.screen
+package dev.dai.bloom.screen
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,9 +39,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
-import dev.dai.androiddevchallenge.component.PlantList
-import dev.dai.androiddevchallenge.component.PlantThemeList
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.bloom.component.PlantList
+import dev.dai.bloom.component.PlantThemeList
+import dev.dai.bloom.ui.theme.MyTheme
 
 @Composable
 fun HomeScreen() {

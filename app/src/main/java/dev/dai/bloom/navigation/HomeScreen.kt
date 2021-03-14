@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.navigation
+package dev.dai.bloom.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -22,7 +22,7 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.ui.graphics.vector.ImageVector
-import dev.dai.androiddevchallenge.R
+import dev.dai.bloom.R
 
 sealed class HomeScreen(val route: String, @StringRes val resId: Int, val iconVector: ImageVector) {
     object Home : HomeScreen("home", R.string.home, Icons.Default.Home)

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.screen
+package dev.dai.bloom.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -39,11 +39,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
-import dev.dai.androiddevchallenge.R
-import dev.dai.androiddevchallenge.navigation.MainScreen
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
-import dev.dai.androiddevchallenge.ui.theme.pink900
-import dev.dai.androiddevchallenge.ui.theme.white
+import dev.dai.bloom.R
+import dev.dai.bloom.navigation.MainScreen
+import dev.dai.bloom.ui.theme.MyTheme
+import dev.dai.bloom.ui.theme.pink900
+import dev.dai.bloom.ui.theme.white
 
 @Composable
 fun WelcomeScreen(navHostController: NavHostController) {

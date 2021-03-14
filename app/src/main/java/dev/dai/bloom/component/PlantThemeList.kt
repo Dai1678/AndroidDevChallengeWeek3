@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.component
+package dev.dai.bloom.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -33,10 +33,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.dai.androiddevchallenge.R
-import dev.dai.androiddevchallenge.data.PlantTheme
-import dev.dai.androiddevchallenge.data.plantThemeList
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.bloom.R
+import dev.dai.bloom.data.PlantTheme
+import dev.dai.bloom.data.plantThemeList
+import dev.dai.bloom.ui.theme.MyTheme
 
 @Composable
 fun PlantThemeList(modifier: Modifier = Modifier) {

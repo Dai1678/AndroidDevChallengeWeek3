@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.data
+package dev.dai.bloom.ui.theme
 
-import androidx.annotation.DrawableRes
-import dev.dai.androiddevchallenge.R
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Shapes
+import androidx.compose.ui.unit.dp
 
-data class PlantTheme(
-    @DrawableRes val imageResId: Int,
-    val name: String
-)
-
-val plantThemeList = listOf(
-    PlantTheme(R.drawable.desert_chic, "Desert chic"),
-    PlantTheme(R.drawable.tiny_terrariums, "Tiny terrariums"),
-    PlantTheme(R.drawable.jungle_vibes, "Jungle vibes"),
-    PlantTheme(R.drawable.easy_care, "Easy care"),
-    PlantTheme(R.drawable.statements, "Statements")
+val shapes = Shapes(
+    small = RoundedCornerShape(4.dp),
+    medium = RoundedCornerShape(24.dp),
+    large = RoundedCornerShape(0.dp)
 )

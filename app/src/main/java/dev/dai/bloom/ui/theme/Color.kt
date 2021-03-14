@@ -13,14 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.ui.theme
+package dev.dai.bloom.ui.theme
 
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Shapes
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 
-val shapes = Shapes(
-    small = RoundedCornerShape(4.dp),
-    medium = RoundedCornerShape(24.dp),
-    large = RoundedCornerShape(0.dp)
-)
+val pink100 = Color(0xFFFFF1F1)
+val pink900 = Color(0xFF3F2C2C)
+val white = Color(0xFFFFFFFF)
+val white150 = Color(0x26FFFFFF)
+val white850 = Color(0xD9FFFFFF)
+val gray = Color(0xFF232323)
+val green900 = Color(0xFF2D3B2D)
+val green300 = Color(0xFFB8C9B8)

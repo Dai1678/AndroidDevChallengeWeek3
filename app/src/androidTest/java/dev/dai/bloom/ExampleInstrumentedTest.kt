@@ -13,22 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.data
+package dev.dai.bloom
 
-import androidx.annotation.DrawableRes
-import dev.dai.androiddevchallenge.R
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import dev.dai.bloom.MainActivity
+import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
 
-data class Plant(
-    @DrawableRes val imageResId: Int,
-    val name: String,
-    val description: String = "This is a description"
-)
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @get:Rule
+    val composeTestRule = createAndroidComposeRule<MainActivity>()
 
-val plantList = listOf(
-    Plant(R.drawable.monstera, "Monstera"),
-    Plant(R.drawable.aglaonema, "Aglaonema"),
-    Plant(R.drawable.peace_lily, "Peace Lily"),
-    Plant(R.drawable.fiddle_leaf, "Fiddle leaf tree"),
-    Plant(R.drawable.snake_plant, "Snake plant"),
-    Plant(R.drawable.pothos, "Pothos")
-)
+    @Test
+    fun sampleTest() {
+        // Add instrumented tests here
+    }
+}

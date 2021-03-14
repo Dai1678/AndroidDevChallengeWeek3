@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.screen
+package dev.dai.bloom.screen
 
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -34,8 +34,8 @@ import androidx.navigation.compose.navigate
 import androidx.navigation.compose.rememberNavController
 import dev.chrisbanes.accompanist.insets.navigationBarsHeight
 import dev.chrisbanes.accompanist.insets.navigationBarsPadding
-import dev.dai.androiddevchallenge.navigation.HomeScreen
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.bloom.navigation.HomeScreen
+import dev.dai.bloom.ui.theme.MyTheme
 
 @Composable
 fun HomeContainerScreen() {

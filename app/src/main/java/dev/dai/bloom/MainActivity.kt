@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge
+package dev.dai.bloom
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -25,11 +25,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
-import dev.dai.androiddevchallenge.navigation.MainScreen
-import dev.dai.androiddevchallenge.screen.HomeContainerScreen
-import dev.dai.androiddevchallenge.screen.LoginScreen
-import dev.dai.androiddevchallenge.screen.WelcomeScreen
-import dev.dai.androiddevchallenge.ui.theme.MyTheme
+import dev.dai.bloom.navigation.MainScreen
+import dev.dai.bloom.screen.HomeContainerScreen
+import dev.dai.bloom.screen.LoginScreen
+import dev.dai.bloom.screen.WelcomeScreen
+import dev.dai.bloom.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

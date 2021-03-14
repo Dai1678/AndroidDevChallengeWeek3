@@ -13,10 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.navigation
+package dev.dai.bloom.data
 
-sealed class MainScreen(val route: String) {
-    object Welcome : MainScreen("Welcome")
-    object Login : MainScreen("Login")
-    object HomeContainer : MainScreen("Home")
-}
+import androidx.annotation.DrawableRes
+import dev.dai.bloom.R
+
+data class Plant(
+    @DrawableRes val imageResId: Int,
+    val name: String,
+    val description: String = "This is a description"
+)
+
+val plantList = listOf(
+    Plant(R.drawable.monstera, "Monstera"),
+    Plant(R.drawable.aglaonema, "Aglaonema"),
+    Plant(R.drawable.peace_lily, "Peace Lily"),
+    Plant(R.drawable.fiddle_leaf, "Fiddle leaf tree"),
+    Plant(R.drawable.snake_plant, "Snake plant"),
+    Plant(R.drawable.pothos, "Pothos")
+)

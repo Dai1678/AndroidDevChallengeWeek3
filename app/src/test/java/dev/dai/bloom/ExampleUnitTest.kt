@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge
+package dev.dai.bloom
 
 /**
  * Example local unit test, which will execute on the development machine (host).

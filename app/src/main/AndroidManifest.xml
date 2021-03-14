@@ -10,7 +10,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.dai.androiddevchallenge">
+    package="dev.dai.bloom">
 
     <application
         android:allowBackup="false"
@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidDevChallenge">
         <activity
-            android:name="dev.dai.androiddevchallenge.MainActivity"
+            android:name="dev.dai.bloom.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.AndroidDevChallenge.NoActionBar">

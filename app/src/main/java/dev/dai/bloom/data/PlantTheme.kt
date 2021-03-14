@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.ui.theme
+package dev.dai.bloom.data
 
-import androidx.compose.ui.graphics.Color
+import androidx.annotation.DrawableRes
+import dev.dai.bloom.R
 
-val pink100 = Color(0xFFFFF1F1)
-val pink900 = Color(0xFF3F2C2C)
-val white = Color(0xFFFFFFFF)
-val white150 = Color(0x26FFFFFF)
-val white850 = Color(0xD9FFFFFF)
-val gray = Color(0xFF232323)
-val green900 = Color(0xFF2D3B2D)
-val green300 = Color(0xFFB8C9B8)
+data class PlantTheme(
+    @DrawableRes val imageResId: Int,
+    val name: String
+)
+
+val plantThemeList = listOf(
+    PlantTheme(R.drawable.desert_chic, "Desert chic"),
+    PlantTheme(R.drawable.tiny_terrariums, "Tiny terrariums"),
+    PlantTheme(R.drawable.jungle_vibes, "Jungle vibes"),
+    PlantTheme(R.drawable.easy_care, "Easy care"),
+    PlantTheme(R.drawable.statements, "Statements")
+)

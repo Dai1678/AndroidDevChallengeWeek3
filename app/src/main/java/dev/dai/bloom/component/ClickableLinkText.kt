@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package dev.dai.androiddevchallenge.component
+package dev.dai.bloom.component
 
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.MaterialTheme
