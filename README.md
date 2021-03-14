@@ -1,22 +1,24 @@
-# Put title of your app here
+# Bloom
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/Dai1678/AndroidDevChallengeWeek3/workflows/Check/badge.svg)
+![Workflow result](https://github.com/Dai1678/Bloom/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-
+This is the [#AndroidDevChallenge Week 3](https://android-developers.googleblog.com/2021/03/android-dev-challenge-3.html) application
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
-
+- I made the UI as designed as possible
+- Took care of window insets
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">
+<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">&emsp;<img src="/results/screenshot_3.png" width="260">
+<img src="/results/screenshot_4.png" width="260">&emsp;<img src="/results/screenshot_5.png" width="260">&emsp;<img src="/results/screenshot_6.png" width="260">
 
 ## License
 ```
